@@ -196,6 +196,8 @@ section {
 
 .header--opened .header__nav {
   top: 54px;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
 }
 
 .header--opened .header__phone {
@@ -224,7 +226,6 @@ section {
 
 .header__logo {
   padding-top: 22px;
-  margin-right: 58px;
 }
 
 .header__logo path {
@@ -284,6 +285,7 @@ section {
 .header__order-btn {
   margin-top: 20px;
   margin-right: auto;
+  margin-left: auto;
 }
 
 .header__burger {
