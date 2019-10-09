@@ -1,0 +1,146 @@
+.header {
+	width: 100%;
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 10;
+	.wrapper {
+		display: flex;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	&--opened {
+		height: 100vh;
+		max-height: 100vh;
+		background-color: rgba(	28,	28,	28, 0.9);
+		background-image: url(../img/menu-bg.jpg);
+		background-size: cover;
+		background-attachment: fixed;
+		~ section {
+			opacity: 0;
+		}
+		.header__nav {
+			top: 54px;
+		}
+		.header__phone  {
+			display: block;
+			position: absolute;
+			bottom: 81px;
+    		left: 24px;
+		}
+		.header__social-wrapper {
+		    bottom: 33px;
+   			left: 30px;
+		}
+	}
+}
+
+.header__logo-wrapper {
+	&:hover .header__logo-circle {
+		animation: logo-point 2s infinite ease-in;
+	}
+	&:hover .header__logo-point {
+		fill: #0DD1A2;
+	}
+	&:hover .header__logo-text {
+		color: #0DD1A2;
+	}
+}
+
+.header__logo {
+	padding-top: 22px;
+	margin-right: 58px;
+	path {
+		transition: fill .7s;
+	}
+}
+
+@keyframes logo-point {
+	from {
+		fill: #fff;
+	}
+	
+	50% {
+		fill: #0DD1A2;
+	}
+	to { fill: #fff; }
+}
+
+
+.header__logo-text {
+	display: none;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 21px;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	transition: color .7s;
+}
+
+.header__nav {
+	position: absolute;
+	top: -100%;
+	left: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+.header__nav-list {
+	display: flex;
+	flex-direction: column;
+	padding-left: 25px;
+	margin-top: 52px;
+}
+
+.header__nav-item	{
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 17px;
+	color: #FFFFFF;
+	margin-bottom: 36px;
+	&:last-of-type {
+		margin-bottom: 50px;
+	}
+}
+
+.header__order-btn {
+	margin-top: 20px;
+	margin-right: auto;
+}
+
+.header__burger {
+	cursor: pointer;
+	padding-top: 29px;
+	rect {
+		transform-origin: center;
+		transition: 0.3s;
+	}
+	&--opened {
+    	padding-top: 26px;
+	    margin-right: -1px;
+	    height: 20px;
+
+		.header__burger-line-1 {
+			y: 6;
+			transform: rotate(-45deg);
+		}
+		.header__burger-line-2 {
+			transform: rotate(45deg);
+		}
+		.header__burger-line-3 {
+			width: 0;
+		}
+	}
+}
+
+.header__phone {
+	display: none;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 18px;
+	color: #FFFFFF;
+}
+
+.header__social-wrapper {
+	position: absolute;	
+}

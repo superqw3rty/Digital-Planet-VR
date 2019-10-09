@@ -1,0 +1,67 @@
+.intro {
+	height: 100vh;
+	background-image: url(../img/intro-bg.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	box-sizing: border-box;
+	display: flex;
+    flex-direction: column;
+    transition: opacity 0.3s;
+	.wrapper {
+		padding-top: 146px;
+		margin-bottom: auto;
+	}
+}
+
+.intro__wrapper {
+	margin-bottom: 54px;
+}
+
+.intro__heading {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 41px;
+	color: #FFFFFF;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.intro__text {
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 137.88%;
+	text-align: center;
+	color: #FFFFFF;
+	max-width: 225px;
+	margin: 0 auto;
+}
+
+
+.intro__order-btn {
+	margin-bottom: 12px;
+}
+
+.intro__video-btn {
+}
+
+.intro__next-btn-text {
+	font-size: 11px;
+	line-height:15px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	color: #FFFFFF;
+	opacity: 0.5;
+	margin-bottom: 32px;
+	transition: opacity .3s;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+
+.intro__social-wrapper {
+	display: none;
+}

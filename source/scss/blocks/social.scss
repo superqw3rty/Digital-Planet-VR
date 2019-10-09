@@ -1,0 +1,26 @@
+.social-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.social {
+	display: flex;
+	opacity: 0.64;
+	transition: opacity 0.3s;
+	&:hover {
+		opacity: 1;
+	}
+	&--fb {
+		width: 11px;
+		height: 22px;
+		background-image: url(../img/fb.svg);
+		background-size: 11px 22px;
+		margin-right: 25px;
+	}
+	&--vk {
+		width: 28px;
+		height: 15px;
+		background-image: url(../img/vk.svg);
+		background-size: 28px 15px;
+	}
+}
