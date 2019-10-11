@@ -188,9 +188,11 @@
 @media (min-width: 960px) {
 	.header {		
 		.wrapper {
-			padding-top: 63px;
-			padding-left: 21px;
-			padding-right: 107px;		}		
+		    margin: 0;
+		    padding-top: 43px;
+		    padding-left: 65px;
+		    padding-right: 65px;
+		}		
 	}
 	.header__logo-wrapper {
 		display: flex;

@@ -22,10 +22,26 @@ let arrowBtn = document.querySelectorAll('.button-arrow');
 let arrowText = document.querySelector('.intro__next-btn-text');
 
 
+arrowText.addEventListener('mouseover',function() {
+	arrowBtn[0].style.opacity = 1;	
+})
+
+arrowText.addEventListener('mouseleave',function() {
+	arrowBtn[0].style.opacity = '';
+})
+arrowBtn[0].addEventListener('mouseover',function() {
+	arrowText.style.opacity = 1;	
+})
+
+arrowBtn[0].addEventListener('mouseleave',function() {
+	arrowText.style.opacity = '';
+})
+
+
 arrowText.addEventListener('click', function() {
 	console.log(this);
 	let parent = arrowText.parentElement;
-	let nextSection = parent.nextElementSibling;
+	let nextSection = parent.parentElement.nextElementSibling;
 	nextSection.scrollIntoView({block: "start", behavior: "smooth"});
 });
 
@@ -33,6 +49,10 @@ arrowBtn.forEach((function(item) {
 	item.addEventListener('click', function(e) {
 		let parent = this.parentElement;
 		let nextSection = parent.nextElementSibling;
+		if (!nextSection) {
+			nextSection = parent.parentElement.nextElementSibling;
+		}
+		console.log(nextSection);
 		nextSection.scrollIntoView({block: "start", behavior: "smooth"});
 	})
 }))

@@ -81,10 +81,23 @@
 @media (min-width: 760px) {
 	.intro{
 		background-image: url(../img/intro/intro-bg@desktop.jpg);
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			background-image: url(../img/intro/kid_VR.png);
+			right: 0;
+			bottom: 0;
+			width: 430px;
+			height: 350px;
+			transform: matrix(1, 0, 0, 1, 0, 0);
+		}
 	
 		.wrapper {
-			margin: 0;    
-			padding-top: 226px;
+			margin: 0 auto;
+		    width: 100%;
+		    box-sizing: border-box;   
+			padding-top: 12.5%;
 			padding-left: 120px;
 			margin-bottom: auto;
 		}
@@ -127,15 +140,33 @@
 	.intro__order-btn {
 		margin-right: 20px;
 	}
+	
+	.intro__bottom-wrapper {
+		max-width: 1366px;
+		width: 100%;
+		margin: 0 auto;
+		position: relative;
+	}
 
 	.intro__social-wrapper {
 	    display: flex;
 	    position: absolute;
-	    bottom: 36px;
+	    bottom: 37px;
 	    left: 74px;
 	}
 
 	.intro__next-btn-text {
-		margin-bottom: 46px;
+		margin-bottom: 44px;
+	}
+}
+
+@media (min-height:760px) {
+	.intro{
+		.wrapper {
+			padding-top: 16.5%;
+		}
+	}
+	.inrto__heading {
+//		font-size: 6rem;
 	}
 }

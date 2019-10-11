@@ -3,11 +3,23 @@
 	font-size: 28px;
 	line-height: 32px;
 	color: #FFFFFF;
-    border-bottom: 3px solid #fff;
+    border-bottom: 3px solid #0DD1A2;;
 	@media (min-width: 960px) {
 		font-weight: 500;
 		font-size: 44px;
 		line-height: 51px;
+		border-bottom: none;
+		position: relative;
+		display: inline-block;
+		&:after {
+			content: '';
+			position: absolute;
+			height: 3px;
+			width: 110%;
+			background-color: #0DD1A2;
+			bottom: 1px;
+			left: 0;
+		}
 	}
 }
 

@@ -21,3 +21,26 @@
 	color: #FFFFFF;
 	margin-bottom: 28px;
 }
+
+.about__next-btn {
+	display: none;
+}
+
+@media(min-width: 960px) {
+	.about {
+		height: 100vh;
+		padding-top: 10%;
+		box-sizing: border-box;
+		position: relative;
+		.wrapper {
+			padding-left: 100px;
+		}
+	}
+	.about__heading  {
+		margin-bottom: 100px;
+		display: inline-block;
+	}
+	.about__next-btn {
+		display: block;
+	}
+}
