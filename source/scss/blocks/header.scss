@@ -108,6 +108,9 @@
 	margin-bottom: 36px;
 	cursor: pointer;
 	transition: color 0.3s;
+	&--active {
+		color:#0DD1A2;
+	}
 	&:hover {
 		color:#0DD1A2;
 	}

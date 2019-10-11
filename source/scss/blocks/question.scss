@@ -1,5 +1,5 @@
 .questions {
-    padding-top: 19px;
+    padding-top: 50px;
     background-color: #0D1117;
 	.wrapper {
 		padding-left: 16px;
@@ -74,8 +74,30 @@
 		background-color: transparent;
 		height: 100vh;
 		padding-top: 150px;
+		position: relative;
 		.wrapper {
 			padding-left: 92px;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			width: 235px;
+			height: 264px;
+			background-image: url(../img/questions/boy.png);
+			background-size: 235px 264px;
+			bottom: 0;
+			right: 30px;
+		}
+	}
+	@media only screen and (-o-min-device-pixel-ratio: 5/4),
+   	only screen and (-webkit-min-device-pixel-ratio: 1.25),
+   	only screen and (min--moz-device-pixel-ratio: 1.25),
+   	only screen and (min-device-pixel-ratio: 1.25),
+	only screen and (min-resolution: 1.25dppx) {
+		.questions{
+			&:after {
+				background-image: url(../img/questions/boy@2x.png);
+			}
 		}
 	}
 
@@ -90,6 +112,7 @@
 
 	.questions__item {
 		max-width: 904px;
+		margin-bottom: 4px;
 	}
 
 	.questions__question {
@@ -105,4 +128,22 @@
 
 		}
 	}
+	
+	.questions__answer-wrapper {	
+		max-width: 615px;	
+		padding-left: 48px;
+
+	}
+
+	.questions__answer-wrapper--opened {
+		padding-bottom: 58px;
+	}
+	
+	.questions__answer {
+		display: inline;
+		&:first-of-type{
+			margin-top: -6px;
+		}
+	}
+
 }

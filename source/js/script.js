@@ -131,8 +131,10 @@ for (let btn of questionBtns) {
 	btn.addEventListener('click', function(e) {
 		let target = this.parentElement.nextElementSibling;
 		if (target.style.height) {
+			console.log(this);
 			target.style.height = '';
 			target.classList.remove('questions__answer-wrapper--opened');
+			this.classList.remove('button__question--opened');
 		} 
 
 		else {
@@ -141,12 +143,16 @@ for (let btn of questionBtns) {
 					item.style.height = '';
 					item.classList.remove('questions__answer-wrapper--opened');					
 				}
+				questionBtns.forEach((btn)=> {
+					btn.classList.remove('button__question--opened');
+				})
 			});
 
 			target.style.height = target.scrollHeight + 'px';
 			target.classList.add('questions__answer-wrapper--opened');
+			this.classList.add('button__question--opened');
+			console.log('opened');
 		}
-
 	});
 };
 
@@ -158,8 +164,9 @@ const modal = document.querySelector('.modal');
 const modalForm = document.forms.modalForm;
 const modalOverlay = document.querySelector('.modal__overlay');
 
+
 orderBbtn.addEventListener('click',()=> {
-	modal.classList.add('modal--opened');
+	modal.classList.add('modal--opened');	
 	modalOverlay.onclick = ()=> {
 		modal.classList.remove('modal--opened');
 	}
@@ -223,3 +230,22 @@ phoneInput.addEventListener('focus', function() {
 	this.parentElement.classList.remove('modal__input-wrapper--invalid');
 	this.nextElementSibling.classList.remove('input__error-text--opened');
 });
+
+
+///MenuHighlight
+
+let sections = document.querySelectorAll('section');
+console.log(sections);
+let menuItems = document.querySelectorAll('.header__nav-item');
+
+console.log(menuItems);
+
+for (let i = 0; i < sections.length; i ++) {
+	
+	sections[i].addEventListener('mouseover', function() {
+			menuItems[i].classList.add('header__nav-item--active');
+	})
+	sections[i].addEventListener('mouseleave', function() {
+			menuItems[i].classList.remove('header__nav-item--active');
+	})
+}
