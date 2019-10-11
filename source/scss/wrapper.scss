@@ -22,6 +22,7 @@
 @media (min-width: 960px) {
 	.wrapper--double {
 		background-image: url(../img/about/about-bg@desktop.jpg);
+		position: relative;
 	}
 	@media only screen and (-o-min-device-pixel-ratio: 5/4),
    	only screen and (-webkit-min-device-pixel-ratio: 1.25),

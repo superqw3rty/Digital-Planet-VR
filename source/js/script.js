@@ -131,7 +131,6 @@ for (let btn of questionBtns) {
 	btn.addEventListener('click', function(e) {
 		let target = this.parentElement.nextElementSibling;
 		if (target.style.height) {
-			console.log(this);
 			target.style.height = '';
 			target.classList.remove('questions__answer-wrapper--opened');
 			this.classList.remove('button__question--opened');
@@ -147,11 +146,9 @@ for (let btn of questionBtns) {
 					btn.classList.remove('button__question--opened');
 				})
 			});
-
 			target.style.height = target.scrollHeight + 'px';
 			target.classList.add('questions__answer-wrapper--opened');
 			this.classList.add('button__question--opened');
-			console.log('opened');
 		}
 	});
 };
@@ -235,17 +232,32 @@ phoneInput.addEventListener('focus', function() {
 ///MenuHighlight
 
 let sections = document.querySelectorAll('section');
-console.log(sections);
 let menuItems = document.querySelectorAll('.header__nav-item');
+sections.forEach(function(item) {
+	item.addEventListener('mouseover', function(e) {
+		menuItems.forEach((item)=>{
+			item.classList.remove('header__nav-item--active');
+		})
+		let data = item.dataset.section;
+		if (data === 'about') {
+			menuItems[1].classList.add('header__nav-item--active');
+		}
+		if (data === 'how') {
+			menuItems[2].classList.add('header__nav-item--active');
+		}
+		if (data === 'questions') {
+			menuItems[4].classList.add('header__nav-item--active');
+		}
+	})
 
-console.log(menuItems);
+});
 
 for (let i = 0; i < sections.length; i ++) {
+
+}
+
+//Menu scroll
+
+function scroll(el) {
 	
-	sections[i].addEventListener('mouseover', function() {
-			menuItems[i].classList.add('header__nav-item--active');
-	})
-	sections[i].addEventListener('mouseleave', function() {
-			menuItems[i].classList.remove('header__nav-item--active');
-	})
 }

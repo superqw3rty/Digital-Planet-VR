@@ -82,6 +82,7 @@ section {
 @media (min-width: 960px) {
   .wrapper--double {
     background-image: url(../img/about/about-bg@desktop.jpg);
+    position: relative;
   }
 }
 
@@ -1209,7 +1210,8 @@ section {
   .questions {
     box-sizing: border-box;
     background-color: transparent;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     padding-top: 150px;
     position: relative;
   }
@@ -1247,6 +1249,9 @@ section {
     max-width: 904px;
     margin-bottom: 4px;
   }
+  .questions__item:last-of-type {
+    margin-bottom: 0;
+  }
   .questions__question {
     font-size: 21px;
     line-height: 28px;
@@ -1258,6 +1263,12 @@ section {
   .questions__question:before {
     content: '';
     position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #0DD1A2;
+    top: 29px;
+    left: 20px;
   }
   .questions__answer-wrapper {
     max-width: 615px;

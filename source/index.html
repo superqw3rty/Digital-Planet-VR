@@ -31,10 +31,10 @@
 			<nav class="header__nav">
 				<ul class="header__nav-list">
 					<li class="header__nav-item header__nav-item--main">ГЛАВНАЯ</li>
-					<li class="header__nav-item">О ПРОДУКТЕ</li>
-					<li class="header__nav-item">КАК РАБОТАЕТ</li>
+					<li class="header__nav-item" data-item="about">О ПРОДУКТЕ</li>
+					<li class="header__nav-item" data-item="how">КАК РАБОТАЕТ</li>
 					<li class="header__nav-item">ТЕХНОЛОГИЯ</li>
-					<li class="header__nav-item">ВОПРОСЫ </li>
+					<li class="header__nav-item" data-item="questions">ВОПРОСЫ </li>
 					<li class="header__nav-item">КОНТАКТЫ</li> 
 				</ul>
 			</nav>
@@ -82,7 +82,7 @@
 	</section>
 	
 	<div class="wrapper wrapper--double">
-		<section class="about">
+		<section class="about" data-section="about">
 			<div class="wrapper">
 				<h2 class="about__heading">Что такое VR&nbsp;-&nbsp;планетарий?</h2>
 				<p class="about__text">Это образовательная программа, использующая технологию виртуальной реальности. </p>
@@ -98,7 +98,7 @@
 			</svg>
 		</section>
 
-		<section class="how">
+		<section class="how" data-section="how">
 			<div class="wrapper">
 				<h2 class="how__heading">Как это работает?</h2>
 				<div class="how__slider">
@@ -168,7 +168,7 @@
 
 		</section>
 
-		<section class="questions">
+		<section class="questions" data-section="questions">
 		<div class="wrapper">
 			<h2 class="questions__heading">Часто задаваемые вопросы</h2>
 			<div class="questions__item">
