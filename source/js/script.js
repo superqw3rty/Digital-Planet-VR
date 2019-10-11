@@ -126,6 +126,7 @@ prevSlide.addEventListener('click',()=> {
 let questionBtns = document.querySelectorAll('.questions__btn');
 const answers =  document.querySelectorAll('.questions__answer-wrapper');
 
+
 for (let btn of questionBtns) {
 	btn.addEventListener('click', function(e) {
 		let target = this.parentElement.nextElementSibling;
