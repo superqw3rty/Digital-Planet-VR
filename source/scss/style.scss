@@ -1,5 +1,9 @@
 @import "global.scss";
 
+@import "wrapper.scss";
+
+@import "mixins.scss";
+
 @import "blocks/buttons.scss";
 
 @import "blocks/header.scss";
@@ -7,3 +11,13 @@
 @import "blocks/social.scss";
 
 @import "blocks/intro.scss";
+
+@import "blocks/about.scss";
+
+@import "blocks/how.scss";
+
+@import "blocks/question.scss";
+
+@import "blocks/inputs.scss";
+
+@import "blocks/modal.scss";

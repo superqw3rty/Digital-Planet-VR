@@ -1,6 +1,10 @@
 .wrapper {
 	max-width: 1366px;
-	min-width: 320px;
 	margin: 0 auto;
+	&--double {
+		background-image: url(../img/about-bg.jpg);
+		background-size: cover;
+		background-attachment: fixed;
+	}
 }
 

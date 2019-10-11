@@ -1,0 +1,151 @@
+.how {
+	padding-top: 85px;
+	.wrapper {
+		padding-left: 21px;
+		padding-right: 11px;
+	}
+}
+
+.how__heading {
+	@include header;
+	padding-bottom: 11px;
+}
+
+.how__slider {
+	display: flex;
+	overflow: hidden;
+	padding-top: 32px;
+	max-width: 288px;
+	margin: 0 auto;
+}
+
+.how__item  {
+	min-width: 288px;
+	margin-bottom: 30px;
+	transition: transform 0.3s;
+}
+
+.how__item-img-wrapper {
+	width: 195px;
+    margin: 0 auto;
+    height: 130px;
+	display: flex;
+    justify-content: center;
+    position: relative;
+    counter-reset: count;
+    margin-bottom: 30px;
+	&:before {
+		display: flex;
+	    justify-content: center;
+	    align-items: center;
+		position: absolute;
+	    bottom: -8px;
+    	left: -16px;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: #fff;
+		box-shadow: 0px 2px 8px rgba(6, 58, 46, 0.2);
+		font-weight: bold;
+		font-size: 28px;
+		line-height: 32px;
+		color: #0DD1A2;
+		z-index: 2;
+	}
+	&:nth-of-type(1):before {
+		content: '1';
+	}
+	&:nth-of-type(2):before {
+		content: '2';
+	}
+	&:nth-of-type(3):before {
+		content: '3';
+	}
+	&:nth-of-type(4):before {
+		content: '4';
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		width: 195px;
+	    height: 130px;
+	    border: 2px solid #0DD1A2;
+		box-sizing: border-box;
+		top: -12px;
+   		right: -4px;
+	}
+}
+
+.how__item-img {
+	margin-left: -15px;
+	position: relative;
+    z-index: 1;
+}
+
+.how__item-text-wrapper {
+	padding-left: 12px;
+	padding-right: 20px;
+}
+
+.how__item-heading {
+	font-weight: bold;
+	font-size: 21px;
+	line-height: 24px;
+	color: #FFFFFF;
+	word-spacing: 200px;
+	margin-bottom: 10px;
+}
+
+.how__item-text {
+	margin: 0;
+	padding: 0;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 19px;
+	color: #FFFFFF;
+}
+
+.how__slider-control {
+	display: flex;
+	justify-content: flex-end;
+	background-color: #0D1117;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 11px;
+}
+
+.how__slider-number {	
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 13px;
+    color: #FFFFFF;
+    opacity: 0.8;
+    margin-right: 22px;
+	&--current {
+		font-weight: 500;
+		opacity: 1;
+	}
+}
+
+.how__slider-button {
+	width: 60px;
+	max-height: 48px;
+	background-color: #1C1C1C;
+	background-repeat: no-repeat;
+	background-position: center center;
+	border: none;
+	&:hover svg path,
+	&:active svg path {
+		stroke: #0DD1A2;
+	}
+}
+
+ .how__slider-arrow {
+ 	transition: stroke 0.3s;
+ 	&--next {
+ 		transform: rotate(180deg);
+ 	}
+ 	&:hover {
+ 		stroke:#0DD1A2;
+ 	}
+ }

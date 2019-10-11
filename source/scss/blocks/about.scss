@@ -1,0 +1,23 @@
+.about {
+	padding-top: 124px;
+	.wrapper {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+}
+
+.about__heading {
+	margin: 0;
+	padding: 0;
+	@include header;
+	padding-bottom: 5px;
+    margin-bottom: 45px;
+}
+
+.about__text {
+	font-weight: 300;
+	font-size: 17px;
+	line-height: 150%;
+	color: #FFFFFF;
+	margin-bottom: 28px;
+}
