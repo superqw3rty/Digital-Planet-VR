@@ -1272,6 +1272,7 @@ section {
   width: 280px;
   height: 46px;
   box-sizing: border-box;
+  background: #FFFFFF;
   opacity: 0.95;
   font-weight: normal;
   font-size: 15px;
@@ -1296,40 +1297,32 @@ section {
   border: 2px solid #F97676;
 }
 
-.input:valid, .input:invalid {
-  background-color: none;
-}
-
 ::-webkit-input-placeholder {
   font-weight: normal;
   font-size: 13px;
-  line-height: 17px;
+  line-height: 40px;
   opacity: 0.4;
-  padding-top: 10px;
 }
 
 :-moz-placeholder {
   font-weight: normal;
   font-size: 13px;
-  line-height: 17px;
+  line-height: 40px;
   opacity: 0.4;
-  padding-top: 10px;
 }
 
 ::-moz-placeholder {
   font-weight: normal;
   font-size: 13px;
-  line-height: 17px;
+  line-height: 40px;
   opacity: 0.4;
-  padding-top: 10px;
 }
 
 :-ms-input-placeholder {
   font-weight: normal;
   font-size: 13px;
-  line-height: 17px;
+  line-height: 40px;
   opacity: 0.4;
-  padding-top: 10px;
 }
 
 .input__error-text {
@@ -1341,10 +1334,6 @@ section {
 
 .input__error-text--opened {
   display: block;
-}
-
-.input::-moz-placeholder {
-  padding-top: 30px;
 }
 
 .modal {
@@ -1426,7 +1415,7 @@ section {
   color: #fff;
   font-size: 1em;
   opacity: 0;
-  width: 400px;
+  width: 80%;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -1461,5 +1450,57 @@ section {
   }
   .modal__form {
     background-color: rgba(21, 179, 141, 0.3);
+  }
+  .modal__fill-alert {
+    width: 400px;
+  }
+}
+
+.video {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 200px;
+  opacity: 0;
+  z-index: -10;
+  transition: opacity 0.3s;
+}
+
+.video--opened {
+  opacity: 1;
+  z-index: 10;
+}
+
+.video__frame {
+  max-width: 280px;
+  max-height: 200px;
+}
+
+.video__close {
+  font-size: 1.5rem;
+  position: absolute;
+  right: -25px;
+  top: -20px;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  opacity: .7;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.video__close:hover {
+  opacity: 1;
+}
+
+@media (min-width: 960px) {
+  .video {
+    max-width: 450px;
+    max-height: 350px;
+  }
+  .video__frame {
+    max-width: 450px;
+    max-height: 350px;
   }
 }

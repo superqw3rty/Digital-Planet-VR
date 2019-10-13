@@ -155,12 +155,25 @@ for (let btn of questionBtns) {
 ///Modal 
 
 const orderBbtn = document.querySelector('.header__order-btn');
+const orderBbtn2 = document.querySelector('.intro__order-btn');
 const modal = document.querySelector('.modal');
 const modalForm = document.forms.modalForm;
 const modalOverlay = document.querySelector('.modal__overlay');
 
 
 orderBbtn.addEventListener('click',()=> {
+	modal.classList.add('modal--opened');	
+	modalOverlay.onclick = ()=> {
+		phoneInput.value = '';
+		nameInput.value = '';
+		phoneInput.classList.remove('input--valid');		
+		nameInput.classList.remove('input--valid');
+		nameInput.parentElement.classList.remove('modal__input-wrapper--valid');
+		phoneInput.parentElement.classList.remove('modal__input-wrapper--valid');
+		modal.classList.remove('modal--opened');
+	}
+})
+orderBbtn2.addEventListener('click',()=> {
 	modal.classList.add('modal--opened');	
 	modalOverlay.onclick = ()=> {
 		phoneInput.value = '';
@@ -308,3 +321,20 @@ for (let item of menuItems) {
 // 		}
 // 	}
 // }
+
+
+////Video frame
+
+const videoBtn = document.querySelector('.intro__video-btn');
+const video = document.querySelector('.video');
+const closeVideo = document.querySelector('.video__close');
+
+videoBtn.addEventListener('click',function(){
+	video.classList.add('video--opened');
+
+})
+closeVideo.addEventListener('click',function(){
+	video.classList.remove('video--opened');
+
+})
+

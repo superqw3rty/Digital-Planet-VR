@@ -80,7 +80,7 @@
     color: #fff;
     font-size: 1em;
    	opacity: 0;
-    width: 400px;
+    width: 80%;
     height: 200px;
     display: flex;
     justify-content: center;
@@ -113,5 +113,8 @@
 
 	.modal__form {
 		background-color: rgba(21, 179, 141, 0.3);
+	}
+	.modal__fill-alert {
+		width: 400px;
 	}
 }
