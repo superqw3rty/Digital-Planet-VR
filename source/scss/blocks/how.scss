@@ -163,7 +163,7 @@
  	}
  }
 
- @media (min-width: 1100px) {
+ @media (min-width: 1300px) {
  	.how {
  		box-sizing: border-box;
  		padding-top: 6.5%;
@@ -251,6 +251,7 @@
  	.how__item-text-wrapper {
  		display: flex;
  		flex-direction: column;
+ 		max-width: 320px;
  	}
 
  	.how__item-heading {

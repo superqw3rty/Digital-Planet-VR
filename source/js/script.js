@@ -39,7 +39,6 @@ arrowBtn[0].addEventListener('mouseleave',function() {
 
 
 arrowText.addEventListener('click', function() {
-	console.log(this);
 	let parent = arrowText.parentElement;
 	let nextSection = parent.parentElement.nextElementSibling;
 	nextSection.scrollIntoView({block: "start", behavior: "smooth"});
@@ -52,7 +51,6 @@ arrowBtn.forEach((function(item) {
 		if (!nextSection) {
 			nextSection = parent.parentElement.nextElementSibling;
 		}
-		console.log(nextSection);
 		nextSection.scrollIntoView({block: "start", behavior: "smooth"});
 	})
 }))
@@ -165,6 +163,12 @@ const modalOverlay = document.querySelector('.modal__overlay');
 orderBbtn.addEventListener('click',()=> {
 	modal.classList.add('modal--opened');	
 	modalOverlay.onclick = ()=> {
+		phoneInput.value = '';
+		nameInput.value = '';
+		phoneInput.classList.remove('input--valid');		
+		nameInput.classList.remove('input--valid');
+		nameInput.parentElement.classList.remove('modal__input-wrapper--valid');
+		phoneInput.parentElement.classList.remove('modal__input-wrapper--valid');
 		modal.classList.remove('modal--opened');
 	}
 })
@@ -176,17 +180,26 @@ orderBbtn.addEventListener('click',()=> {
 const phoneInput = document.querySelector('.input--phone');
 
 Inputmask({"mask": "+ 7(999) 999-99-99"}).mask(phoneInput);
+const alertClose = document.querySelector('.modal__fill-alert-close');
 
 
 ///InputVAlidate
 
 const nameInput = document.querySelector('.input--name');
+const modalAlert = document.querySelector('.modal__fill-alert');
 
 nameInput.addEventListener('blur', function() {
+	
 	if (this.value.match("[A-Za-zА-Яа-яЁё]+(\s+[A-Za-zА-Яа-яЁё]+)?")) {
 		this.classList.add('input--valid');
-		this.parentElement.classList.add('modal__input-wrapper--valid');	
-	} else if (this.value.length === 0) {
+		this.parentElement.classList.add('modal__input-wrapper--valid');
+	}
+	else if (nameInput.classList.contains('input--valid') && phoneInput.classList.contains('input--valid')) {
+
+		modalAlert.classList.add('modal__fill-alert--opened');
+		setTimeout(closeAlert, 10000)
+	} 
+	 else if (this.value.length === 0) {
 		return
 	}
 	else {
@@ -205,20 +218,23 @@ nameInput.addEventListener('focus', function() {
 });
 
 phoneInput.addEventListener('blur', function() {
+	
 	if (this.value.length === 0 ) {
 		return;
 	}
 	else if (this.value.length > 0 && this.value.match("_")) {
-		console.log('invalid');
 		this.classList.add('input--invalid');
 		this.parentElement.classList.add('modal__input-wrapper--invalid');
 		this.nextElementSibling.classList.add('input__error-text--opened');
 	}
 	else {
-		console.log('valid');
 		this.classList.add('input--valid');
 		this.parentElement.classList.add('modal__input-wrapper--valid');	
 	}
+	if (nameInput.classList.contains('input--valid') && phoneInput.classList.contains('input--valid')) {
+		modalAlert.classList.add('modal__fill-alert--opened');
+		setTimeout(closeAlert, 10000)
+	} 
 });
 phoneInput.addEventListener('focus', function() {
 	this.classList.remove('input--valid');
@@ -227,6 +243,12 @@ phoneInput.addEventListener('focus', function() {
 	this.parentElement.classList.remove('modal__input-wrapper--invalid');
 	this.nextElementSibling.classList.remove('input__error-text--opened');
 });
+
+function closeAlert() {
+	modalAlert.classList.remove('modal__fill-alert--opened');
+}
+
+alertClose.addEventListener('click', closeAlert);
 
 
 ///MenuHighlight
@@ -252,12 +274,37 @@ sections.forEach(function(item) {
 
 });
 
-for (let i = 0; i < sections.length; i ++) {
-
-}
 
 //Menu scroll
 
-function scroll(el) {
-	
+
+for (let i = 0; i < menuItems.length; i++) {
+	menuItems[i].addEventListener('click', function(){
+		let target = this.dataset.item;
+
+		for (let i = 0; i < sections.length; i++) {
+			if (!target) {
+				return;
+			}
+			else if (sections[i].dataset.section === target) {
+				sections[i].scrollIntoView({block: "start", behavior: "smooth"});
+				burger.classList.remove('header__burger--opened');
+				header.classList.remove('header--opened');
+		 		menu.style.height = '';
+		 	}
+		}			
+	})
 }
+for (let item of menuItems) {
+
+}
+// function scroll() {
+// 	console.log('fired');
+// 	let target = this.dataset.item;
+// 	console.log(target);
+// 	for (let i = 0; i < sections.length; i++) {
+// 		if (sections[i].dataset.section === target) {
+// 			sections[i].scrollIntoView({block: "start", behavior: "smooth"});
+// 		}
+// 	}
+// }

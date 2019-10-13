@@ -31,10 +31,10 @@
 			<nav class="header__nav">
 				<ul class="header__nav-list">
 					<li class="header__nav-item header__nav-item--main">ГЛАВНАЯ</li>
-					<li class="header__nav-item" data-item="about">О ПРОДУКТЕ</li>
-					<li class="header__nav-item" data-item="how">КАК РАБОТАЕТ</li>
+					<li class="header__nav-item" data-item="about" >О ПРОДУКТЕ</li>
+					<li class="header__nav-item" data-item="how" >КАК РАБОТАЕТ</li>
 					<li class="header__nav-item">ТЕХНОЛОГИЯ</li>
-					<li class="header__nav-item" data-item="questions">ВОПРОСЫ </li>
+					<li class="header__nav-item" data-item="questions" >ВОПРОСЫ </li>
 					<li class="header__nav-item">КОНТАКТЫ</li> 
 				</ul>
 			</nav>
@@ -200,12 +200,12 @@
 
 			<div class="questions__item">
 				<div class="questions__top-wrapper">
-					<p class="questions__question">Дейсвтительно ли это образовательный метод, или это лишь игрушка?</p>
+					<p class="questions__question">Действительно ли это образовательный метод, или это лишь игрушка?</p>
 					<button class="questions__btn button__question"><span class="questions__btn-cross">+</span></button>
 				</div>
 				<div class="questions__answer-wrapper">
 					<p class="questions__answer">
-						Дейсвтительно ли это образовательный метод, или это лишь игрушка?Дейсвтительно ли это образовательный метод, или это лишь игрушка?Дейсвтительно ли это образовательный метод, или это лишь игрушка?Дейсвтительно ли это образовательный метод, или это лишь игрушка?Дейсвтительно ли это образовательный метод, или это лишь игрушка?Дейсвтительно ли это образовательный метод, или это лишь игрушка?
+						Действительно ли это образовательный метод, или это лишь игрушка?Действительно ли это образовательный метод, или это лишь игрушка?Действительно ли это образовательный метод, или это лишь игрушка?Действительно ли это образовательный метод, или это лишь игрушка?Действительно ли это образовательный метод, или это лишь игрушка?Действительно ли это образовательный метод, или это лишь игрушка?
 					</p>
 				</div>
 			</div>
@@ -230,18 +230,22 @@
 	<div class="modal">
 		<form action="" class="modal__form" name="modalForm">
 			<div class="modal__input-wrapper modal__input-wrapper--name">
-				<input type="text" class="modal__input input input--name" placeholder="Ваше Имя" required>
+				<input type="text" name="name" class="modal__input input input--name" placeholder="Ваше Имя" required>
 				<p class="input__error-text">Допускается только Кириллица и Латиница</p>
 			</div>
 			<div class="modal__input-wrapper modal__input-wrapper--phone">
-				<input type="tel" class="modal__input input--phone input" placeholder="+ 7 (___) ___ – ___ – __" required inputmode="numeric">
+				<input type="tel" name="phone" class="modal__input input--phone input" placeholder="+ 7 (___) ___ – ___ – __" required inputmode="numeric">
 				<p class="input__error-text">Неправильно введены данные</p>
 			</div>
 			<button class="modal__button button-primary">Заказать</button>
 		</form>
+		<div class="modal__fill-alert">
+			Это окно закроется через 10 секунд
+			<span class="modal__fill-alert-close">X</span>
+		</div>
 		<div class="modal__overlay"></div>
 	</div>
-
+	
 	<script  src="js/inputmask.min.js"></script>
 	<script src="js/script.js"></script>
 </body>

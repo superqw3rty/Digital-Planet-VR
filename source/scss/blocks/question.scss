@@ -79,16 +79,6 @@
 		.wrapper {
 			padding-left: 92px;
 		}
-		&:after {
-			content: '';
-			position: absolute;
-			width: 235px;
-			height: 264px;
-			background-image: url(../img/questions/boy.png);
-			background-size: 235px 264px;
-			bottom: 0;
-			right: 30px;
-		}
 	}
 	@media only screen and (-o-min-device-pixel-ratio: 5/4),
    	only screen and (-webkit-min-device-pixel-ratio: 1.25),
@@ -155,4 +145,20 @@
 		}
 	}
 
+}
+
+@media(min-width: 1180px) {
+	.questions {
+	
+		&:after {
+			content: '';
+			position: absolute;
+			width: 235px;
+			height: 264px;
+			background-image: url(../img/questions/boy.png);
+			background-size: 235px 264px;
+			bottom: 0;
+			right: 30px;
+		}
+	}
 }

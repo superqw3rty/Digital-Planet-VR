@@ -453,33 +453,20 @@ section {
   bottom: 100%;
 }
 
-@media (min-width: 760px) {
-  /*	.header {
-		.wrapper {
-			align-items:center;
-			padding-top: 20px;
-		}
-	}
-	.header__logo-wrapper {
-		display: flex;
-		align-items: center;
-	}	
-	.header__logo {
-		padding-top: 0;
-	}
-	.header__logo-text {
-		display: block;
-		margin: 0;
-		padding: 0;
-	}*/
-}
-
-@media (min-width: 960px) {
+@media (min-width: 1200px) {
   .header .wrapper {
     margin: 0 auto;
     padding-top: 43px;
     padding-left: 65px;
     padding-right: 65px;
+  }
+  .header__nav {
+    position: relative;
+    top: auto;
+    left: auto;
+    height: auto;
+    overflow: auto;
+    margin-right: auto;
   }
   .header__logo-wrapper {
     display: flex;
@@ -494,14 +481,6 @@ section {
     margin: 0;
     padding: 0;
     line-height: 22px;
-  }
-  .header__nav {
-    position: relative;
-    top: auto;
-    left: auto;
-    height: auto;
-    overflow: auto;
-    margin-right: auto;
   }
   .header__nav-list {
     margin: 0;
@@ -697,7 +676,7 @@ section {
   .intro__text {
     margin: 0;
     text-align: left;
-    max-width: initial;
+    max-width: none;
     font-weight: 300;
     font-size: 17px;
     line-height: 25px;
@@ -1006,7 +985,7 @@ section {
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1300px) {
   .how {
     box-sizing: border-box;
     padding-top: 6.5%;
@@ -1083,6 +1062,7 @@ section {
   .how__item-text-wrapper {
     display: flex;
     flex-direction: column;
+    max-width: 320px;
   }
   .how__item-heading {
     margin-top: 0;
@@ -1218,16 +1198,6 @@ section {
   .questions .wrapper {
     padding-left: 92px;
   }
-  .questions:after {
-    content: '';
-    position: absolute;
-    width: 235px;
-    height: 264px;
-    background-image: url(../img/questions/boy.png);
-    background-size: 235px 264px;
-    bottom: 0;
-    right: 30px;
-  }
 }
 
 @media only screen and (min-width: 960px) and (-o-min-device-pixel-ratio: 5 / 4), only screen and (min-width: 960px) and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min-width: 960px) and (min--moz-device-pixel-ratio: 1.25), only screen and (min-width: 960px) and (min-device-pixel-ratio: 1.25), only screen and (min-width: 960px) and (min-resolution: 1.25dppx) {
@@ -1285,11 +1255,23 @@ section {
   }
 }
 
+@media (min-width: 1180px) {
+  .questions:after {
+    content: '';
+    position: absolute;
+    width: 235px;
+    height: 264px;
+    background-image: url(../img/questions/boy.png);
+    background-size: 235px 264px;
+    bottom: 0;
+    right: 30px;
+  }
+}
+
 .input {
   width: 280px;
   height: 46px;
   box-sizing: border-box;
-  background: #FFFFFF;
   opacity: 0.95;
   font-weight: normal;
   font-size: 15px;
@@ -1314,11 +1296,16 @@ section {
   border: 2px solid #F97676;
 }
 
+.input:valid, .input:invalid {
+  background-color: none;
+}
+
 ::-webkit-input-placeholder {
   font-weight: normal;
   font-size: 13px;
   line-height: 17px;
   opacity: 0.4;
+  padding-top: 10px;
 }
 
 :-moz-placeholder {
@@ -1326,6 +1313,7 @@ section {
   font-size: 13px;
   line-height: 17px;
   opacity: 0.4;
+  padding-top: 10px;
 }
 
 ::-moz-placeholder {
@@ -1333,6 +1321,7 @@ section {
   font-size: 13px;
   line-height: 17px;
   opacity: 0.4;
+  padding-top: 10px;
 }
 
 :-ms-input-placeholder {
@@ -1340,6 +1329,7 @@ section {
   font-size: 13px;
   line-height: 17px;
   opacity: 0.4;
+  padding-top: 10px;
 }
 
 .input__error-text {
@@ -1351,6 +1341,10 @@ section {
 
 .input__error-text--opened {
   display: block;
+}
+
+.input::-moz-placeholder {
+  padding-top: 30px;
 }
 
 .modal {
@@ -1421,6 +1415,44 @@ section {
 
 .modal__input-wrapper--invalid:after {
   background-image: url(../img/error.png);
+}
+
+.modal__fill-alert {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  color: #fff;
+  font-size: 1em;
+  opacity: 0;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+
+.modal__fill-alert--opened {
+  z-index: 100;
+  opacity: 1;
+}
+
+.modal__fill-alert-close {
+  font-size: 1.5rem;
+  position: absolute;
+  right: -25px;
+  top: -20px;
+  width: 20px;
+  height: 20px;
+  opacity: .7;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.modal__fill-alert-close:hover {
+  opacity: 1;
 }
 
 @media (min-width: 960px) {
