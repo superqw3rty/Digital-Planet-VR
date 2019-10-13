@@ -1,5 +1,6 @@
 @font-face {
     font-family: 'Ubuntu';
+    font-display: auto;
     src: url('Ubuntu-Regular.woff');
     src: local('Ubuntu Regular'), local('Ubuntu-Regular'),
         url('../fonts/Ubuntu-Regular.woff2') format('woff2'),
@@ -10,6 +11,7 @@
 
 @font-face {
     font-family: 'Ubuntu';
+    font-display: auto;
     src: url('Ubuntu-Medium.woff2');
     src: local('Ubuntu Medium'), local('Ubuntu-Medium'),
         url('../fonts/Ubuntu-Medium.woff2') format('woff2'),
@@ -20,6 +22,7 @@
 
 @font-face {
     font-family: 'Ubuntu';
+    font-display: auto;
     src: url('Ubuntu-Bold.woff2');
     src: local('Ubuntu Bold'), local('Ubuntu-Bold'),      
         url('../fonts/Ubuntu-Bold.woff2') format('woff2'),
@@ -30,6 +33,7 @@
 
 @font-face {
     font-family: 'Ubuntu';
+    font-display: auto;
     src: url('Ubuntu-Light.woff2');
     src: local('Ubuntu Light'), local('Ubuntu-Light'),    
         url('../fonts/Ubuntu-Light.woff2') format('woff2'),
