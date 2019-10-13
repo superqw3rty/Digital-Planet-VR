@@ -227,6 +227,10 @@ section {
   transition: 0.3s;
 }
 
+.button__question--opened {
+  background-color: #1C1C1C;
+}
+
 .button__question--opened span {
   transform: rotate(-45deg);
 }
@@ -1097,6 +1101,7 @@ section {
 .questions {
   padding-top: 50px;
   background-color: #0D1117;
+  overflow: hidden;
 }
 
 .questions .wrapper {
